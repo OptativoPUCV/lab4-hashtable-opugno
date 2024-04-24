@@ -58,7 +58,7 @@ void enlarge(HashMap * map) {
 HashMap * createMap(long capacity) 
 {
   HashMap * map = (HashMap *) malloc(sizeof(HashMap));
-  Pair** buckets = (Pair **) calloc(sizeof(Pair), capacity);  //inicializar cada espacio del la tabla.
+  map -> buckets = (Pair **) calloc(sizeof(Pair), capacity);  //inicializar cada espacio del la tabla.
   map -> size = 0;
   map -> current = -1;
   map -> capacity = capacity;
