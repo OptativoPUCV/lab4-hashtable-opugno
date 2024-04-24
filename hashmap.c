@@ -47,7 +47,9 @@ void insertMap(HashMap * map, char * key, void * value)
     Pair *aux = (Pair *) malloc(sizeof(Pair)); // crear una auxiliar
     aux -> key = key;
     aux -> value = value;
-    map -> buckets[indice] = aux;
+    //map -> buckets[indice] = aux;
+    map -> buckets[indice]  = aux;
+    map -> current = indice;
     map -> size++;
   }
   else
