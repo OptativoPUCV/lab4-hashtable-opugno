@@ -45,3 +45,28 @@ Wed 24 Apr 2024 10:01:10 PM UTC:
  tests:  1|5
 total_score: 10/70
 e594e67
+Wed 24 Apr 2024 10:07:47 PM UTC: 
+ hashmap.c | 16 ++++++++++------
+ 1 file changed, 10 insertions(+), 6 deletions(-)
+In file included from test.c:4:
+hashmap.c: In function ‘searchMap’:
+hashmap.c:94:3: error: ‘fo’ undeclared (first use in this function)
+   94 |   fo
+      |   ^~
+hashmap.c:94:3: note: each undeclared identifier is reported only once for each function it appears in
+hashmap.c:94:5: error: expected ‘;’ before ‘return’
+   94 |   fo
+      |     ^
+      |     ;
+   95 | 
+   96 |     return NULL;
+      |     ~~~~~~
+hashmap.c:92:7: error: unused variable ‘indice’ [-Werror=unused-variable]
+   92 |   int indice = hash(key, map -> capacity);
+      |       ^~~~~~
+hashmap.c:97:1: error: control reaches end of non-void function [-Werror=return-type]
+   97 | }
+      | ^
+cc1: all warnings being treated as errors
+Compilation failed
+b4430b4

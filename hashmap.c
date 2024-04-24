@@ -42,7 +42,7 @@ int is_equal(void* key1, void* key2){
 void insertMap(HashMap * map, char * key, void * value) 
 {
   int indice = hash(key, map -> capacity); //obtener el indice del dato.
-  if (map -> buckets[indice] == NULL || map -> buckets[indice] -> key != NULL)
+  if (map -> buckets[indice] -> value == NULL || map -> buckets[indice] -> key == NULL)
   {
     Pair *aux = (Pair *) malloc(sizeof(Pair)); // crear una auxiliar
     aux -> key = key;
@@ -64,7 +64,8 @@ void insertMap(HashMap * map, char * key, void * value)
   }
 } 
 
-void enlarge(HashMap * map) {
+void enlarge(HashMap * map) 
+{
     enlarge_called = 1; //no borrar (testing purposes)
 
 
@@ -73,10 +74,10 @@ void enlarge(HashMap * map) {
 
 HashMap * createMap(long capacity) 
 {
-  HashMap * map = (HashMap *) malloc(sizeof(HashMap));
+  HashMap * map = (HashMap *) malloc(sizeof(HashMap));        //crar mapa
   map -> buckets = (Pair **) calloc(sizeof(Pair), capacity);  //inicializar cada espacio del la tabla.
-  map -> size = 0;
-  map -> current = -1;
+  map -> size = 0;                                            //inicializar el tamaño
+  map -> current = -1;                                        //el current es -1, ya que todavia no estamos en ningún espacio.
   map -> capacity = capacity;
   return map;
 }
@@ -86,8 +87,11 @@ void eraseMap(HashMap * map,  char * key) {
 
 }
 
-Pair * searchMap(HashMap * map,  char * key) {   
+Pair * searchMap(HashMap * map,  char * key) 
+{   
+  int indice = hash(key, map -> capacity);
 
+  fo
 
     return NULL;
 }
