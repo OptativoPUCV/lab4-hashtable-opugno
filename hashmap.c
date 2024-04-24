@@ -48,6 +48,7 @@ void insertMap(HashMap * map, char * key, void * value)
     aux -> key = key;
     aux -> value = value;
     map -> buckets[indice] = aux;
+    map -> size++;
   }
   else
   {
@@ -59,6 +60,7 @@ void insertMap(HashMap * map, char * key, void * value)
         aux -> key = key;
         aux -> value = value;
         map -> buckets[i] = aux;
+        map -> size++;
       }
     }
   }
