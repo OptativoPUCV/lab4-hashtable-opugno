@@ -49,6 +49,19 @@ void insertMap(HashMap * map, char * key, void * value)
     aux -> value = value;
     map -> buckets[indice] = aux;
   }
+  else
+  {
+    for (int i = 0; i < map -> capacity; i++)
+    {
+      if (map -> buckets[i] == NULL)
+      {
+        Pair *aux = (Pair*) malloc(sizeof(Pair));
+        aux -> key = key;
+        aux -> value = value;
+        map -> buckets[i] = aux;
+      }
+    }
+  }
 } 
 
 void enlarge(HashMap * map) {
