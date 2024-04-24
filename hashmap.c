@@ -44,7 +44,10 @@ void insertMap(HashMap * map, char * key, void * value)
   int indice = hash(key, map -> capacity);
   if (map -> buckets[indice] == NULL || map -> buckets[indice] -> key == NULL)
   {
-    
+    Pair *aux = (Pair *) malloc(sizeof(Pair)); // crear una auxiliar
+    aux -> key = key;
+    aux -> value = value;
+    map -> buckets[indice] = aux;
   }
 } 
 
