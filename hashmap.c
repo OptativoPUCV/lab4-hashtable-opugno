@@ -89,9 +89,9 @@ void eraseMap(HashMap * map,  char * key) {
 
 Pair * searchMap(HashMap * map,  char * key) 
 {   
-  int indice = hash(key, map -> capacity);
+  //int indice = hash(key, map -> capacity);
 
-  fo
+  //fo
 
     return NULL;
 }
