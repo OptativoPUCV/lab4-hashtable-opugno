@@ -42,7 +42,7 @@ int is_equal(void* key1, void* key2){
 void insertMap(HashMap * map, char * key, void * value) 
 {
   int indice = hash(key, map -> capacity); //obtener el indice del dato.
-  if (map -> buckets[indice] == NULL || map -> buckets[indice] -> key == -1)
+  if (map -> buckets[indice] == NULL || map -> buckets[indice] -> key == NULL)
   {
     Pair *aux = (Pair *) malloc(sizeof(Pair)); // crear una auxiliar
     aux -> key = key;
