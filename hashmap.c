@@ -95,6 +95,7 @@ Pair * searchMap(HashMap * map,  char * key)
       else return map -> buckets[index];
     }
   }
+  return NULL;
 }
 
 Pair * firstMap(HashMap * map) {
