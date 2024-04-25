@@ -53,17 +53,20 @@ void insertMap(HashMap * map, char * key, void * value)
   }
   else
   {
-    
-    for (int i = 0; i < map -> capacity; i++)
+    if (strcmp(map -> buckets[indice] -> key, key) == 0) return;
+    else
     {
-      int nuevoIndice = (indice + i) % map -> capacity;
-      if (map -> buckets[nuevoIndice] == NULL)
+      for (int i = 0; i < map -> capacity; i++)
       {
-        Pair *aux = (Pair*) malloc(sizeof(Pair));
-        aux -> key = key;
-        aux -> value = value;
-        map -> buckets[i] = aux;
-        map -> size++;
+        int nuevoIndice = (indice + i) % map -> capacity;
+        if (map -> buckets[nuevoIndice] == NULL)
+        {
+          Pair *aux = (Pair*) malloc(sizeof(Pair));
+          aux -> key = key;
+          aux -> value = value;
+          map -> buckets[i] = aux;
+          map -> size++;
+        }
       }
     }
   }
