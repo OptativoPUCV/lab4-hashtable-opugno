@@ -165,3 +165,15 @@ Thu 25 Apr 2024 10:03:31 PM UTC:
  tests:  2|5
 total_score: 10/70
 3e2ce5b
+Thu 25 Apr 2024 10:04:43 PM UTC: 
+ hashmap.c | 2 +-
+ 1 file changed, 1 insertion(+), 1 deletion(-)
+In file included from test.c:4:
+hashmap.c: In function ‘insertMap’:
+hashmap.c:59:65: error: ‘newIndice’ undeclared (first use in this function); did you mean ‘nuevoIndice’?
+   59 |       if (map -> buckets[nuevoIndice] == NULL || map -> buckets[newIndice] -> key == NULL)
+      |                                                                 ^~~~~~~~~
+      |                                                                 nuevoIndice
+hashmap.c:59:65: note: each undeclared identifier is reported only once for each function it appears in
+Compilation failed
+dffb55a
