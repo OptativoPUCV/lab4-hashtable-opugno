@@ -42,7 +42,7 @@ int is_equal(void* key1, void* key2){
 void insertMap(HashMap * map, char * key, void * value) 
 {
   int indice = hash(key, map -> capacity); //obtener el indice del dato.
-  if (map -> buckets[indice] != NULL && map -> buckets[indice] -> key != key)
+  while (map -> buckets[indice] != NULL && map -> buckets[indice] -> key != key)
   {
     indice = (indice +1) % map -> capacity; //si el indice esta ocupado, se busca el siguiente.
   }
