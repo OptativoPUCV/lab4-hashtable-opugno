@@ -53,10 +53,11 @@ void insertMap(HashMap * map, char * key, void * value)
   }
   else
   {
+    
     for (int i = 0; i < map -> capacity; i++)
     {
       int nuevoIndice = (indice + i) % map -> capacity;
-      if (map -> buckets[nuevoIndice] == NULL || map -> buckets[nuevoIndice] -> key == NULL)
+      if (map -> buckets[nuevoIndice] == NULL)
       {
         Pair *aux = (Pair*) malloc(sizeof(Pair));
         aux -> key = key;
