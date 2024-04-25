@@ -42,34 +42,18 @@ int is_equal(void* key1, void* key2){
 void insertMap(HashMap * map, char * key, void * value) 
 {
   int indice = hash(key, map -> capacity); //obtener el indice del dato.
-  if (map -> buckets[indice] == NULL || map -> buckets[indice] -> key == NULL)
+  if (map -> buckets[indice] != NULL && map -> buckets[indice] -> key != key)
   {
-    Pair *aux = (Pair *) malloc(sizeof(Pair)); // crear una auxiliar
-    aux -> key = key;
-    aux -> value = value;
-    map -> buckets[indice]  = aux;
-    map -> current = indice;
-    map -> size++;
+    indice = (indice +1) % map -> capacity; //si el indice esta ocupado, se busca el siguiente.
   }
-  else
-  {
-    if (strcmp(map -> buckets[indice] -> key, key) == 0) return;
-    else
-    {
-      for (int i = 0; i < map -> capacity; i++)
-      {
-        int nuevoIndice = (indice + i) % map -> capacity;
-        if (map -> buckets[nuevoIndice] == NULL)
-        {
-          Pair *aux = (Pair*) malloc(sizeof(Pair));
-          aux -> key = key;
-          aux -> value = value;
-          map -> buckets[i] = aux;
-          map -> size++;
-        }
-      }
-    }
-  }
+  
+  Pair *aux = (Pair*) malloc(sizeof(Pair));
+  aux -> key = key;
+  aux -> value = value;
+  map -> buckets[indice] = aux;
+  map -> size++;
+  map -> current = indice;
+      
 } 
 
 void enlarge(HashMap * map) 
