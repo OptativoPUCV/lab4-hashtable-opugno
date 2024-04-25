@@ -85,20 +85,14 @@ Pair * searchMap(HashMap * map,  char * key)
 {   
   int index = hash(key, map -> capacity);
 
-  if (strcmp(map -> buckets[index] -> key, key) == 0) 
+  while (map -> buckets[index] != NULL)
   {
-    map -> current = index;
-    return map -> buckets[index];
-  }
-  else
-  {
-    while (map -> buckets[index] -> key != key)
+    if (strcmp(map -> buckets[index] -> key, key) == 0 ) 
     {
       map -> current = index;
-      index = (index +1) % map -> capacity;
-      if (map -> buckets[index] == NULL) return NULL;
-      else return map -> buckets[index];
+      return map -> buckets[index];
     }
+    index = (indez + 1) % map -> capacity;
   }
   return NULL;
 }
