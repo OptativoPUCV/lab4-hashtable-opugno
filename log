@@ -177,3 +177,9 @@ hashmap.c:59:65: error: ‘newIndice’ undeclared (first use in this function);
 hashmap.c:59:65: note: each undeclared identifier is reported only once for each function it appears in
 Compilation failed
 dffb55a
+Thu 25 Apr 2024 10:04:53 PM UTC: 
+ hashmap.c | 2 +-
+ 1 file changed, 1 insertion(+), 1 deletion(-)
+ tests:  2|5
+total_score: 10/70
+b0b988d
