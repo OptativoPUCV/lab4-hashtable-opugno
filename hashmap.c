@@ -116,7 +116,7 @@ Pair * firstMap(HashMap * map)
   }
   map -> buckets[map -> current] = NULL;
   map -> current ++;
-  return NULL;
+  //return NULL;
 }
 
 Pair * nextMap(HashMap * map) {
