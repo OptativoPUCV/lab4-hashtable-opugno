@@ -117,9 +117,7 @@ Pair * firstMap(HashMap * map)
       return map -> buckets[map -> current];
       map -> buckets[map -> current] = NULL;
     }
-    //map -> buckets[map -> current] = NULL;
   }
-  //map -> buckets[map -> current] = NULL;
   map -> current ++;
   return NULL;
 }
