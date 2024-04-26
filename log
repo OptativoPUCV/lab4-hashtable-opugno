@@ -498,3 +498,24 @@ hashmap.c:65:10: error: unused variable ‘oldBuckets’ [-Werror=unused-variabl
 cc1: all warnings being treated as errors
 Compilation failed
 6ef3cde
+Fri 26 Apr 2024 05:03:36 PM UTC: 
+ hashmap.c | 12 +++++++++++-
+ 1 file changed, 11 insertions(+), 1 deletion(-)
+In file included from test.c:4:
+hashmap.c: In function ‘enlarge’:
+hashmap.c:81:3: error: expected expression before ‘)’ token
+   81 |   )
+      |   ^
+hashmap.c:81:3: error: expected expression before ‘)’ token
+hashmap.c:82:1: error: expected expression before ‘}’ token
+   82 | }
+      | ^
+hashmap.c:76:7: error: unused variable ‘oldSize’ [-Werror=unused-variable]
+   76 |   int oldSize = map -> size;
+      |       ^~~~~~~
+hashmap.c:65:10: error: unused variable ‘oldBuckets’ [-Werror=unused-variable]
+   65 |   Pair** oldBuckets = map -> buckets;;
+      |          ^~~~~~~~~~
+cc1: all warnings being treated as errors
+Compilation failed
+b6620ea

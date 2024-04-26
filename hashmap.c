@@ -66,9 +66,19 @@ void enlarge(HashMap * map)
   
   int newCapacity = map -> capacity * 2;
   map -> capacity = newCapacity;
-  Pair** aux = (Pair**) calloc(newCapacity, sizeof(Pair*));
-
   
+  map -> buckets = (Pair**) calloc(newCapacity, sizeof(Pair*));
+  if (map -> buckets == NULL)
+  {
+    return;
+  }
+  
+  int oldSize = map -> size;
+  map -> size = 0;
+
+  for (
+    
+  )
 }
 
 
