@@ -120,7 +120,13 @@ Pair * firstMap(HashMap * map)
   return NULL;
 }
 
-Pair * nextMap(HashMap * map) {
-
-    return NULL;
+Pair * nextMap(HashMap * map) 
+{
+  map -> current = 0;
+  if (map -> buckets[map -> current +1] != NULL && map -> buckets[map -> current +1] -> key != NULL)
+  {
+    return map -> buckets[map -> current +1];
+  }
+  map -> current++;
+  return NULL;
 }
