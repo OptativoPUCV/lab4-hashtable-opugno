@@ -288,3 +288,14 @@ Fri 26 Apr 2024 12:07:13 AM UTC:
  tests:  11|2
 total_score: 50/70
 e6cb08a
+Fri 26 Apr 2024 03:19:31 PM UTC: 
+ hashmap.c | 7 ++++++-
+ 1 file changed, 6 insertions(+), 1 deletion(-)
+In file included from test.c:4:
+hashmap.c: In function ‘firstMap’:
+hashmap.c:113:22: error: ‘current’ undeclared (first use in this function)
+  113 |   if (map -> buckets[current] != NULL)
+      |                      ^~~~~~~
+hashmap.c:113:22: note: each undeclared identifier is reported only once for each function it appears in
+Compilation failed
+bca4222
