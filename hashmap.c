@@ -115,8 +115,9 @@ Pair * firstMap(HashMap * map)
     if (map -> buckets[map -> current] != NULL && map -> buckets[map -> current] -> key != NULL)
     {
       return map -> buckets[map -> current];
-      map -> buckets[map -> current] = NULL;
+      //map -> buckets[map -> current] = NULL;
     }
+    map -> buckets[map -> current] = NULL;
   }
   //map -> buckets[map -> current] = NULL;
   map -> current ++;
