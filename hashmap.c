@@ -116,6 +116,7 @@ Pair * firstMap(HashMap * map)
     {
       return map -> buckets[map -> current];
     }
+    map -> buckets[map -> current] = NULL;
     map -> current ++;
   }
   
@@ -130,7 +131,7 @@ Pair * nextMap(HashMap * map)
     if (map -> buckets[map -> current] != NULL)
       return map -> buckets[map -> current];
   
-    map -> current++;
+    map -> current ++;
   }
   return NULL;
 }
