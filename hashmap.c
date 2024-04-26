@@ -124,10 +124,12 @@ Pair * firstMap(HashMap * map)
 Pair * nextMap(HashMap * map) 
 {
   map -> current = 0;
-  if (map -> buckets[map -> current +1] != NULL && map -> buckets[map -> current +1] -> key != NULL)
+  while (map -> current != 0)
   {
-    return map -> buckets[map -> current +1];
+    if (map -> buckets[map -> current + 1] != NULL )//&& map -> buckets[map -> current] ->
+      return map -> buckets[map -> current +1];
   }
+
   map -> current++;
   return NULL;
 }
