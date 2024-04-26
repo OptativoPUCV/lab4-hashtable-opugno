@@ -110,9 +110,9 @@ Pair * searchMap(HashMap * map,  char * key)
 Pair * firstMap(HashMap * map) 
 {
   map -> current = 0;
-  if (map -> buckets[current] != NULL)
+  if (map -> buckets[map -> current] != NULL)
   {
-    return map -> buckets[current];
+    return map -> buckets[map -> current];
   }
   map -> current ++;
   return NULL;
