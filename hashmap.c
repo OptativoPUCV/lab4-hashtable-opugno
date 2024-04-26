@@ -112,22 +112,25 @@ Pair * firstMap(HashMap * map)
   map -> current = 0;
   while (map -> current < map -> capacity)
   {
-    if (map -> buckets[map -> current] != NULL )//&& map -> buckets[map -> current] -> key != NULL)
+    if (map -> buckets[map -> current] != NULL )
     {
       return map -> buckets[map -> current];
     }
     map -> current ++;
   }
-  map -> current ++;
+  
   return NULL;
 }
 
 Pair * nextMap(HashMap * map) 
 {
   map -> current = 0;
-  if (map -> buckets[map -> current + 1] != NULL )//&& map -> buckets[map -> current] ->
-    return map -> buckets[map -> current +1];
-
-  map -> current++;
+  while (map -> current < map -> capacity)
+  {
+    if (map -> buckets[map -> current + 1] != NULL )//&& map -> buckets[map -> current] ->
+      return map -> buckets[map -> current +1];
+  
+    map -> current++;
+  }
   return NULL;
 }
